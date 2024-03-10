@@ -1,0 +1,99 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+        "main-image sidebar"
+        "slider-container sidebar";
+    height: 100vh;
+    width: 100vw;
+    background-color: #DADADA;
+
+}
+
+.main-image {
+    grid-area: main-image;
+    background-image: url('https://source.unsplash.com/TiVPTYCG_3E');
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: .5rem;
+    border-left: 2px solid rgb(16, 9, 112);
+    
+}
+
+.sidebar-button {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: aqua;
+    border: none;
+    outline: none;
+    position: relative;
+    font-size: 1rem;
+    transition: background-color 250ms;
+    overflow: hidden;
+    width: 100%;
+}
+
+.sidebar-button:focus, .sidebar-button:hover {
+    background-color: rgb(16, 9, 112);
+    color: white;
+}
+
+.sidebar-button.active {
+    background-color: bisque;
+    color: black;
+}
+
+.sidebar-button::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: #1a3399;
+    transition: width 0.4s ease-in-out;
+}
+
+.sidebar-button:hover::after {
+    background-color: #ffffff;
+    width: 100%;
+
+}
+
+/* .sidebar:last-child::after {
+    display: none;
+}  */
+.slider-container {
+    grid-area: slider-container;
+    background-color: green;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.slider {
+    width: 100%;
+    cursor: pointer;
+} 
