@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Slider from './Slider'
 import SideBarItem from './SideBarItem'
-
+import PhotoEditor from './FileInput'
 
 
 const DEFAULT_OPTION = [
@@ -103,7 +103,8 @@ export default function App() {
 
   return (
     <div className='container'>
-      <div className="header">Photo Editor</div>
+      
+      <div className="header">Photo Editor </div>
       <div className='main-image' style={getImageStyle()}>
         
       </div>
@@ -120,6 +121,7 @@ export default function App() {
             />
           )
         })}
+        <PhotoEditor />
       </div>
       <Slider
         name = {selectedObject.name}
