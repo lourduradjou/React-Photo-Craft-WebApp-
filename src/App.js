@@ -10,7 +10,7 @@ const DEFAULT_OPTION = [
   {
     name: 'Brightness',
     property: 'brightness',
-    value: 50,
+    value: 100,
     range: {
       min: 0,
       max: 200
@@ -20,7 +20,7 @@ const DEFAULT_OPTION = [
   {
     name: 'Contrast',
     property: 'contrast',
-    value: 50,
+    value: 70,
     range: {
       min: 0,
       max: 100
@@ -103,7 +103,10 @@ export default function App() {
 
   return (
     <div className='container'>
-      <div className='main-image' style={getImageStyle()}> </div>
+      <div className="header">Photo Editor</div>
+      <div className='main-image' style={getImageStyle()}>
+        
+      </div>
       <div className="sidebar">
         {options.map((option, index) => {
           return ( 
@@ -119,6 +122,7 @@ export default function App() {
         })}
       </div>
       <Slider
+        name = {selectedObject.name}
         min = {selectedObject.range.min}
         max = {selectedObject.range.max}
         value = {selectedObject.value}
